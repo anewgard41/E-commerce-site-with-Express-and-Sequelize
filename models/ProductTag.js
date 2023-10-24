@@ -6,7 +6,7 @@ class ProductTag extends Model {}
 
 ProductTag.init(
   {
-    // This is the table that contains the many to many relationship. It needs id, product_id, and tag_id columns. id column will be the primary key and will auto-increment.
+    // This is the connection table that contains the many to many relationship. It needs id, product_id, and tag_id columns. id column will be the primary key and will auto-increment.
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -30,7 +30,7 @@ ProductTag.init(
       },
     },
   },
-  
+
   {
     sequelize,
     timestamps: false,
