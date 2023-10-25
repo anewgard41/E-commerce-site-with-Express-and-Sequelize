@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
         }
       ]
     });
-    res.json(products);
+    res.status(200).json(products);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -37,7 +37,7 @@ router.get('/:id', async (req, res) => {
         }
       ]
     });
-    res.json(product);
+    res.status(200).json(product);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -126,7 +126,7 @@ router.delete('/:id', async (req, res) => {
     const product = await Product.destroy({
       where: { id: req.params.id }
     });
-    res.json(product);
+    res.status(200).json(product);
   } catch (err) {
     res.status(400).json(err);
   }

@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
     const categories = await Category.findAll({
       include: [Product],
     });
-    res.json(categories);
+    res.status(200).json(categories);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -24,7 +24,7 @@ router.get('/:id', async (req, res) => {
       },
       include: [Product],
     });
-    res.json(category);
+    res.status(200).json(category);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
   // create a new category
   try {
     const category = await Category.create(req.body);
-    res.json(category);
+    res.status(200).json(category);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -48,7 +48,7 @@ router.put('/:id', async (req, res) => {
         id: req.params.id,
       },
     });
-    res.json(result);
+    res.status(200).json(result);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -62,7 +62,7 @@ router.delete('/:id', async (req, res) => {
         id: req.params.id,
       },
     });
-    res.json(result);
+    res.status(200).json(result);
   } catch (err) {
     res.status(500).json(err);
   }
